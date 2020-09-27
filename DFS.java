@@ -7,15 +7,22 @@ public class DFS {
 		
 		int[] elements= new int[] {1,2,3,4,5,6,7,8};
 		
-		
-		GraphMaking graphMaking=new GraphMaking();
-		Node root= graphMaking.makeGraph(elements);
-		
+		Node root= GraphMaking.makeGraph(elements);
+		dfs(root);
 	}
 	
-	
+	static void dfs(Node root)
+	{	
+		if(root== null) return;
+		dfs(root.left);
+		System.out.println(root.data);
+		dfs(root.right);
+		
+	}
 
 }
+
+
 
 class Node
 {
